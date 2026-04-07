@@ -1,0 +1,54 @@
+.home {
+    position: relative;
+}
+
+.hero{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.searchbar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transform: translateY(470px);
+}
+.search__input {
+    padding: 12px 8px;
+    font-size: 24px;
+    border-radius: 50px;
+}
+.search__btn {
+    position: relative;
+    border: 1px solid black;
+    border-radius: 50%;
+    left: -53px;
+}
+.search__btn img {
+    width: 48px;
+    height: 48px;
+    text-align: center;
+    padding: 2px;
+}
+.background__image {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+.movie__ticket--wrapper {
+    position: absolute;
+    top: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    width: 700px;
+}
+.movie__ticket {
+    width: 100%;
+}

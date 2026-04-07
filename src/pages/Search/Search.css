@@ -1,0 +1,44 @@
+.search__nav {
+    margin: 24px;
+    display: flex;
+    align-items: center;
+    
+}
+.search__results--title {
+    text-align: center;
+    padding: 24px;
+    font-size: 48px;
+    font-weight: 700;
+}
+.back__btn {
+    padding: 12px 8px;
+    background: transparent;
+    width: 50px;
+}
+
+.movie__container{
+    position: relative;
+    width: calc(100%/3);
+    margin: 8px;
+}
+.movie__poster {
+    width: 100%;
+}
+.movie__info {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 4px;
+
+ 
+}
+.movie__title {
+    font-size: 36px;
+    font-weight: 500;
+}

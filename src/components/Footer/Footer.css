@@ -1,0 +1,26 @@
+.footer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 8px;
+}
+.logo {
+    max-width: 100px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+.footer__icons {
+    gap: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 24px;
+    cursor:not-allowed;
+}
+.footer__icons img {
+    max-width: 25px;
+}
+.footer p {
+    margin-bottom: 8px;
+}
