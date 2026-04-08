@@ -19,7 +19,7 @@ const Home = ({ setQuery, query = "" }) => {
     if (query.trim()) {
       // Navigate to search results with query param
       navigate(`/search`, { state: { searchTerm: query } });
-      console.log(query);
+      
     }
   };
 

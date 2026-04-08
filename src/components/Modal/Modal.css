@@ -1,0 +1,55 @@
+.modal {
+    position: fixed;
+    top:0 ;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    transition: all 500ms ease;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+}
+
+
+.modal__movie {
+    position: relative;
+    width: 40%;
+    border-radius: 20px;
+}
+.modal__movie img {
+    width: 100%;
+}
+.modal__info {
+    position: absolute;
+    width: 80%;
+    top: 50%;
+    left: 50%;
+    transition:all 500ms ease;
+    text-align: center;
+    color: black;
+    opacity: 0;
+}
+.modal__movie:hover .modal__info {
+  transform: translate(-50%, -50%);
+  opacity: 1;
+ 
+}
+.modal__movie:hover .modal__movie--poster{
+    filter: blur(.8);
+    filter:contrast(.5)
+}
+
+.modal__title {
+    font-size: 48px;
+    font-weight: 600;
+}
+.modal__rating, .modal__release {
+    font-size: 32px;
+    font-weight: 700;
+
+}
+.modal__plot {
+    font-size: 18px;
+}

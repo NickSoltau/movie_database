@@ -5,11 +5,14 @@ import facebook from '../../assets/facebook_icon.png'
 import youtube from '../../assets/youtube_icon.png'
 import twitter from '../../assets/twitter_icon.png'
 import logo from '../../assets/logo.png'
+import { Link } from 'react-scroll'
+
 
 const Footer = () => {
   return (
     <div className='footer'>
-        <img src= {logo} className='logo' />
+        <Link to="home" smooth={true} offset={0} duration={500}><img src= {logo} className='logo' />
+        </Link> 
       
     
         <div className="footer__icons">

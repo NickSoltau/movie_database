@@ -1,8 +1,10 @@
 import React, { useEffect, useRef } from "react";
 import "./Navbar.css";
 import logo_img from "../../assets/logo.png";
+import { Link } from "react-scroll";
 
-import { Link } from "react-router-dom";
+
+
 
 const Navbar = () => {
   const navRef = useRef();
@@ -24,19 +26,19 @@ const Navbar = () => {
   return (
     <div className="navbar" ref={navRef}>
       <div className="logo__wrapper">
-        <Link to="/">
+        <Link to="home" smooth={true} offset={0} duration={500}>
           <img src={logo_img} alt="" className="logo" />
         </Link>
       </div>
       <ul className="navbar__links">
         <li className="navbar__link">
-          <Link to="/">Home</Link>
+          <Link to="home" smooth={true} offset={0} duration={500}>Home</Link>
         </li>
         <li className="navbar__link">
-          <Link to="/">Search</Link>
+          <Link to="home"  smooth={true} offset={100} duration={500}>Search</Link>
         </li>
         <li className="navbar__link">
-          <Link to="/">Blockbusters</Link>
+          <Link to="home"  smooth={true} offset={500} duration={500}>Blockbusters</Link>
         </li>
       </ul>
     </div>

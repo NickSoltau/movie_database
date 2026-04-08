@@ -11,11 +11,15 @@
   font-weight: 700;
 }
 .back__btn {
-  padding: 12px 8px;
+  margin: 12px;
   background: transparent;
-  width: 50px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
 }
-
+.back__btn--img {
+  width: 100%;
+}
 .search__results {
   display: flex;
   flex-wrap: wrap;
@@ -28,6 +32,7 @@
   margin: 12px;
   border-radius: 8px;
   overflow: hidden;
+  cursor: pointer;
 }
 .movie__poster {
   width: 100%;

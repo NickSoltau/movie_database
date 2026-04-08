@@ -1,10 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./Blockbuster.css";
 import axios from "axios";
+import Modal from "../Modal/Modal";
 
 const Blockbuster = () => {
   const cardsRef = useRef();
   const [apiData, setApiData] = useState([]);
+  
 
   const handleWheel = (event) => {
     if (cardsRef.current) {
@@ -22,6 +24,7 @@ const Blockbuster = () => {
         );
         if (data.Search) {
           setApiData(data.Search);
+          
         }
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -47,13 +50,14 @@ const Blockbuster = () => {
         <h2 className="section__title">Blockbuster Movies</h2>
         <div className="card__list" ref={cardsRef}>
           {apiData.map((movie, index) => (
-            <div className="card" key={index}>
+            <div className="card" key={index} >
               <img src={movie.Poster} alt={movie.Title} className="card__img" />
               <p className="card__title">{movie.Title}</p>
             </div>
           ))}
         </div>
       </div>
+      
     </div>
   );
 };
