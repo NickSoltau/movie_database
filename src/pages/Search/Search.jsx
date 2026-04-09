@@ -5,6 +5,7 @@ import { Link, useLocation } from "react-router-dom";
 import axios from "axios";
 import back_arrow from "../../assets/back_arrow_icon.png";
 import Modal from "../../components/Modal/Modal";
+import placeholder from '../../assets/placeholder.png'
 
 function Search({ apiData }) {
 
@@ -13,6 +14,7 @@ function Search({ apiData }) {
   const [apiRequest, setApiRequest] = useState([]);
   const [selectedMovie, setSelectedMovie]= useState(null)
   const [showModal, setShowModal]= useState(false)
+  const [loading, setLoading] = useState(false);
 
   const location = useLocation();
   const searchTerm = apiData || location.state?.searchTerm || "";
@@ -20,6 +22,7 @@ function Search({ apiData }) {
   useEffect(() => {
     async function fetchMovies() {
       if (!searchTerm) return;
+      setLoading(true);
       try {
         const { data } = await axios.get(
           `https://www.omdbapi.com/?s=${searchTerm}&apikey=7cddbfc`,
@@ -27,6 +30,8 @@ function Search({ apiData }) {
           setApiRequest(data.Search || []);
       } catch (error) {
         console.error("Error fetching data:", error);
+      } finally {
+        setLoading(false);
       }
     }
     fetchMovies();
@@ -62,14 +67,17 @@ function Search({ apiData }) {
         </h2>
 
         <div className="search__results">
-          {apiRequest.length > 0 ? (
-            apiRequest.map((movie, imdbID) => (
-              <div className="movie__container" key={imdbID}
+            {loading ? (
+          <p>Loading...</p> 
+        ) :
+          apiRequest.length > 0 ? (
+            apiRequest.map((movie) => (
+              <div className="movie__container" key={movie.imdbID}
               onClick={() => onMovieClick(movie.imdbID)}>
                 <img
                   className="movie__poster"
-                  src={movie.Poster}
-                  alt={movie.Title}
+                  src={movie.Poster !== "N/A" ? movie.Poster : placeholder} 
+                  alt={movie.Title}                 
                 />
                 <div className="movie__info">
                   <h3 className="movie__title">{movie.Title}</h3>

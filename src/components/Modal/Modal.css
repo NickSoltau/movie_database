@@ -12,10 +12,10 @@
    
 }
 
-
 .modal__movie {
     position: relative;
-    width: 40%;
+    width: 500px;
+    max-width: 50%;
     border-radius: 20px;
 }
 .modal__movie img {
