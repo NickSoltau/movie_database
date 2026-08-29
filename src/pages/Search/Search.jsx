@@ -25,7 +25,7 @@ function Search({ apiData }) {
       setLoading(true);
       try {
         const { data } = await axios.get(
-          `https://www.omdbapi.com/?s=${searchTerm}&apikey=7cddbfc`,
+          `https://www.omdbapi.com/?s=${searchTerm}&apikey=${import.meta.env.VITE_OMDB_KEY}`,
         );
           setApiRequest(data.Search || []);
       } catch (error) {
