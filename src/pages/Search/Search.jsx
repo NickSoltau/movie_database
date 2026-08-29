@@ -43,7 +43,7 @@ function Search({ apiData }) {
     async function onMovieClick(imdbID) {
       try {
             const { data } = await axios.get(
-              `https://www.omdbapi.com/?i=${imdbID}&apikey=7cddbfc`
+              `https://www.omdbapi.com/?i=${imdbID}&apikey=${import.meta.env.VITE_OMDB_KEY}`
             );
             setSelectedMovie(data); // Save the full details (Plot, Genre, etc.)
             setShowModal(true);
