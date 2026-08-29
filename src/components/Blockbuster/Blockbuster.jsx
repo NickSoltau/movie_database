@@ -20,7 +20,7 @@ const Blockbuster = () => {
       try {
         // Added try-catch for better error handling
         const { data } = await axios.get(
-          `https://www.omdbapi.com/?s=batman&apikey=7cddbfc`,
+          `https://www.omdbapi.com/?s=batman&apikey=${import.meta.env.VITE_OMDB_KEY}`,
         );
         if (data.Search) {
           setApiData(data.Search);
